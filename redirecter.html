@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+	const queryString = window.location.search;
+	console.log(queryString);
+	const urlParams = new URLSearchParams(queryString);
+	const redirecturl = urlParams.get('redirecturl')
+	console.log(redirecturl);
+
+
+    window.onload = function() {
+        setTimeout(function() {
+            window.location = redirecturl;
+        }, 5000);
+    };
+</script>
+	</head>
+<body>
+
+<h2>Redirct to local URL</h2>
+<p>
+	<a id="url" href="" target="_blank">Test</a>
+</p>
+
+</body>
+</html> 
+
