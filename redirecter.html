@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script type="text/javascript">
-	const queryString = window.location.search;
-	console.log(queryString);
-	const urlParams = new URLSearchParams(queryString);
-	const redirecturl = urlParams.get('redirecturl')
-	console.log(redirecturl);
+<head>
+	<script type="text/javascript">
+		var queryString = window.location.search;
+		
+		if (queryString !== null) {
+			console.log("queryString = " +queryString );
+			redirecturlhref = queryString.substring(13, queryString.length);
+			console.log("redirecturlhref = " +redirecturlhref);
+		} else {
+			console.log ("redirecturl is null")
+		}
 
-
-    window.onload = function() {
-        setTimeout(function() {
-            window.location = redirecturl;
-        }, 5000);
-    };
-</script>
-	</head>
+		window.onload = function() {
+			if (redirecturlhref !== null) {
+				window.location = redirecturlhref;
+			} else {
+				console.log ("redirecturl is null")
+			}
+		};
+	</script>
+</head>
 <body>
 
-<h2>Redirct to local URL</h2>
-<p>
-	<a id="url" href="" target="_blank">Test</a>
-</p>
+	<h2>Redirct to local URL</h2>
+	<p>
+		<a id="redirectlink" href="" target="_blank">localurl://</a>
+	</p>
+	<h3>Examples</h3>
+	<p><a href="obsidian://open?vault=Second%20Brain%20%3A%20Zettlekastan&file=Testtest">obsidian://open?vault=Second%20Brain%20%3A%20Zettlekastan&file=Testtest</a></p>
+	<p><a href="x-devonthink-item://9259BA1F-6A2C-4478-A12C-1272BA9351EA">x-devonthink-item://9259BA1F-6A2C-4478-A12C-1272BA9351EA</a></p>
 
 </body>
+<script type="text/javascript">
+	var a = document.getElementById('redirectlink');
+		
+	a.href = redirecturlhref;
+	a.title = redirecturlhref;
+	a.textContent = redirecturlhref;
+
+</script>
 </html> 
 
