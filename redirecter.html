@@ -4,12 +4,12 @@
 	<script type="text/javascript">
 		var queryString = window.location.search;
 		
-		if (queryString !== null) {
+		if (queryString == null) {
+			console.log ("queryString is null")
+		} else {
 			console.log("queryString = " +queryString );
 			redirecturlhref = queryString.substring(13, queryString.length);
 			console.log("redirecturlhref = " +redirecturlhref);
-		} else {
-			console.log ("queryString is null")
 		}
 
 		window.onload = function() {
