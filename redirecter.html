@@ -4,19 +4,19 @@
 	<script type="text/javascript">
 		var queryString = window.location.search;
 		
-		if (queryString == null) {
-			console.log ("queryString is null")
-		} else {
+		if (queryString) {
 			console.log("queryString = " +queryString );
 			redirecturlhref = queryString.substring(13, queryString.length);
 			console.log("redirecturlhref = " +redirecturlhref);
+		} else {
+			console.log ("queryString is empty")
 		}
 
 		window.onload = function() {
-			if (redirecturlhref == null) {
-				console.log ("redirecturl is null")
-			} else {
+			if (redirecturlhref) {
 				//window.location = redirecturlhref;
+			} else {
+				console.log ("redirecturl is null")
 			}
 		};
 	</script>
