@@ -9,11 +9,11 @@
 			redirecturlhref = queryString.substring(13, queryString.length);
 			console.log("redirecturlhref = " +redirecturlhref);
 		} else {
-			console.log ("redirecturl is null")
+			console.log ("queryString is null")
 		}
 
 		window.onload = function() {
-			if (redirecturlhref == "") {
+			if (redirecturlhref == null) {
 				console.log ("redirecturl is null")
 			} else {
 				//window.location = redirecturlhref;
